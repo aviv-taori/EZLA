@@ -43,7 +43,7 @@ export const login = async (req: CustomRequest, res: Response): Promise<void> =>
           res.status(401).send({ error: 'User status is not approved!' });
         }
       } else if (user.role === UserRoleEnum.Admin || user.role === UserRoleEnum.Driver) {
-        res.send(user);
+        res.send({ token: await userRecord.user.getIdToken() });
       } else {
         res.status(401).send({ error: 'User is not authorized!' });
       }

@@ -11,5 +11,7 @@ export async function getUser(uid: string): Promise<User> {
 }
 
 export async function updateUser(uid: string, user: User): Promise<void> {
-  await client.json.set(`user:${uid}`, '$', { ...user });
+  const currentUser = await client.json.get(`user:${uid}`);
+  const updatedUser:User = Object.assign(currentUser, user);
+  await client.json.set(`user:${uid}`, '$', { ...updatedUser });
 }
