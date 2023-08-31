@@ -37,10 +37,13 @@ npm run dev:backend
 ```
 
 ### Create users for local dev
-Call GET request to http://localhost:3000/dev/init which will create 3 users (via Postman or CURL) which will create 3 users:
+Call GET request to http://localhost:3000/dev/init which will create 3 users (via Postman or CURL):
+```
 admin@test.com, Admin*1
 driver@test.com, Driver*1
 requester@test.com, Requester*1
+```
+
 ### Generating open api typescript client
 ```
 npm run generate:api:client -w client
