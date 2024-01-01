@@ -108,12 +108,15 @@ export const RideCard = ({
             </div>
           </div>
           <div className="flex items-center">
-            <Typography color="GrayText" variant="body2" component="div">
+            <Typography className="mb-7" color="GrayText" variant="body2" component="div">
               הערה:
             </Typography>
-            <Typography className="ml-1 mr-1" variant="body1" component="div">
+            <div style={{ width: '90%' }}>
+            <Typography  className="ml-1 mr-1 " variant="body1" component="div"
+            sx={{ maxWidth: '100%', overflowWrap: 'break-word' }}>
               {ride?.comment}
             </Typography>
+            </div>
           </div>
           <SpecialRequestsChips specialRequests={ride.specialRequest || []} />
           {selected && (
